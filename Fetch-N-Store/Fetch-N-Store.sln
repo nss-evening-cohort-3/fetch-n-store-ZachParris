@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fetch-N-Store", "Fetch-N-Store\Fetch-N-Store.csproj", "{ED69061A-D5B2-448C-AD5F-F3926807DF34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fetch-N-Store.Tests", "Fetch-N-Store.Tests\Fetch-N-Store.Tests.csproj", "{49E7590E-7576-4217-9A8D-233B7B49FCB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED69061A-D5B2-448C-AD5F-F3926807DF34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED69061A-D5B2-448C-AD5F-F3926807DF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED69061A-D5B2-448C-AD5F-F3926807DF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED69061A-D5B2-448C-AD5F-F3926807DF34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E7590E-7576-4217-9A8D-233B7B49FCB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E7590E-7576-4217-9A8D-233B7B49FCB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E7590E-7576-4217-9A8D-233B7B49FCB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E7590E-7576-4217-9A8D-233B7B49FCB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
