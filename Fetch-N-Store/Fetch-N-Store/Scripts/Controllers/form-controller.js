@@ -23,5 +23,15 @@
             }, function error(response) {
                 console.log("Error", response);
             }
-        )};
+        )
+    };
+
+    $scope.store = function () {
+        $http({
+            method: 'POST',
+            url: $scope.url
+        }).then(function success(post) {
+            console.log("Posted Successfully", post);
+        })
+    }
     });

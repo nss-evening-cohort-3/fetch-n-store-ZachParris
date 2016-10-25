@@ -11,6 +11,7 @@
         </select>
         <input ng-model="url" type="text" id="disabledTextInput" class="form-control" placeholder="URL">
         <button ng-click="fetch()" class="btn btn-primary">Fetch</button>
+        <button ng-click="store()" class="btn btn-primary">Store</button>
     </div>
 
 
@@ -19,15 +20,9 @@
         <h4 class="col-sm-3">URL</h4>
         <h4 class="col-sm-3">Method</h4>
         <h4 class="col-sm-3">Response Time</h4>
-
-
-
         <div class="col-sm-3">{{returnedResponse.status}}</div>
-
         <div class="col-sm-3">{{returnedResponse.url}}</div>
-
         <div class="col-sm-3">{{returnedResponse.method}}</div>
-
         <div class="col-sm-3">{{returnedResponse.time}}</div>
     </div>
 </div>
