@@ -19,7 +19,7 @@ namespace Fetch_N_Store.DAL
         {
             Context = _context;
         }
-        public List<Responses> GetResponse()
+        public List<Response> GetResponse()
         {
             return Context.Responses.ToList();
         }
