@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Fetch_N_Store.DAL
 {
-    public class ResponseContext
+    public class ResponseContext : DbContext
     {
         public virtual DbSet<Response> Responses { get; set; }
     }

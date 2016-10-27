@@ -14,24 +14,23 @@
             console.log(response);
             console.log($scope.returnedResponse);
             var responseTime = queryTime - Date.now();
-                $scope.returnedResponse.status = response.status,
-                $scope.returnedResponse.url = $scope.url,
-                $scope.returnedResponse.method = $scope.httpMethod,
-                $scope.returnedResponse.time = responseTime
-                console.log($scope.returnedResponse);
+            $scope.returnedResponse.status = response.status,
+            $scope.returnedResponse.url = $scope.url,
+            $scope.returnedResponse.method = $scope.httpMethod,
+            $scope.returnedResponse.time = responseTime
+            console.log($scope.returnedResponse);
 
-            }, function error(response) {
-                console.log("Error", response);
-            }
+        }, function error(response) {
+            console.log("Error", response);
+        }
         )
     };
 
     $scope.store = function () {
-        $http({
-            method: 'POST',
-            url: $scope.url
-        }).then(function success(post) {
+        $http.post('api/Response'{})
+        .success(function success(post) {
             console.log("Posted Successfully", post);
         })
     }
+
     });
