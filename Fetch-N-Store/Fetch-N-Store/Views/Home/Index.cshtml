@@ -3,7 +3,7 @@
 }
 <div ng-controller="FormController">
     <div class="form-inline">
-        <h1 class="text-center">Fetch N' Store</h1>
+        <h1 class="text-center">Fetch and Store</h1>
         <br />
         <select ng-model="httpMethod" class="form-control">
             <option value="GET">GET</option>
@@ -11,18 +11,47 @@
         </select>
         <input ng-model="url" type="text" id="disabledTextInput" class="form-control" placeholder="URL">
         <button ng-click="fetch()" class="btn btn-primary">Fetch</button>
-        <button ng-click="store()" class="btn btn-primary">Store</button>
+
     </div>
 
 
-    <div>
-        <h4 class="col-sm-3">Status Code</h4>
-        <h4 class="col-sm-3">URL</h4>
-        <h4 class="col-sm-3">Method</h4>
-        <h4 class="col-sm-3">Response Time</h4>
-        <div class="col-sm-3">{{returnedResponse.status}}</div>
-        <div class="col-sm-3">{{returnedResponse.url}}</div>
-        <div class="col-sm-3">{{returnedResponse.method}}</div>
-        <div class="col-sm-3">{{returnedResponse.time}}</div>
+    <div class="container">
+        <div class="row">
+            <table class="table">
+                <tr>
+                    <th>Status Code</th>
+                    <th>URL</th>
+                    <th>Method</th>
+                    <th>Response Time</th>
+                </tr>
+                <tr>
+                    <td>{{returnedResponse.status}}</td>
+                    <td>{{returnedResponse.url}}</td>
+                    <td>{{returnedResponse.method}}</td>
+                    <td>{{returnedResponse.time}}ms</td>
+                    <td><button type="submit" ng-click="store()" class="btn btn-primary btn-sm">Store</button></td>
+                </tr>
+            </table>
+        </div>
+</div>
+    <div class="container">
+        <div class="row">
+            <table class="table">
+                <tr>
+                    <th>Status Code</th>
+                    <th>URL</th>
+                    <th>Method</th>
+                    <th>Response Time</th>
+                </tr>
+
+                <tr ng-repeat="returnedResponse in returnedResponses">
+                    <td>{{returnedResponse.StatusCode}}</td>
+                    <td>{{returnedResponse.URL}}</td>
+                    <td>{{returnedResponse.Method}}</td>
+                    <td>{{returnedResponse.ResponseTime}}ms</td>
+                    <td><button type="submit" ng-click="DeleteResponse(returnedResponse.ResponseId)" class="btn btn-danger btn-sm">Delete</button></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>

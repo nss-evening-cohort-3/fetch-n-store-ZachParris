@@ -11,25 +11,43 @@
             method: $scope.httpMethod,
             url: $scope.url
         }).then(function success(response) {
-            console.log(response);
-            console.log($scope.returnedResponse);
-            var responseTime = queryTime - Date.now();
+            var responseTime = Date.now() - queryTime;
             $scope.returnedResponse.status = response.status,
             $scope.returnedResponse.url = $scope.url,
             $scope.returnedResponse.method = $scope.httpMethod,
             $scope.returnedResponse.time = responseTime
-            console.log($scope.returnedResponse);
-
         }, function error(response) {
             console.log("Error", response);
         }
         )
     };
 
+    $scope.showAll = function () {
+        console.log("get");
+        $http.get('/api/Response')
+            .success(function (data) {
+                $scope.returnedResponses = data;
+                console.log(data);
+        })
+    }
+
+
     $scope.store = function () {
-        $http.post('api/Response'{})
-        .success(function success(post) {
-            console.log("Posted Successfully", post);
+        var jsonData = JSON.stringify($scope.returnedResponse)
+        $http.post('/api/Response', jsonData)
+        .success(function () {
+            console.log("works");
+            $scope.showAll();
+        })
+    }
+
+    $scope.DeleteResponse = function (id) {
+        $http({
+            url: `/api/response/${id}`,
+            method: 'DELETE',
+
+        }).success(response => {
+            $scope.showAll();
         })
     }
 

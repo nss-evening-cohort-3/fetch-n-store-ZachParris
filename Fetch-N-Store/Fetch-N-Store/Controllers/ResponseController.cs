@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Fetch_N_Store.DAL;
+using Fetch_N_Store.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,10 +11,13 @@ namespace Fetch_N_Store.Controllers
 {
     public class ResponseController : ApiController
     {
+        ResponseRepository Repo = new ResponseRepository();
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<Response> Get()
         {
-            return new string[] { "value1", "value2" };
+            List<Response> Responses = Repo.GetResponse();
+
+            return Responses;
         }
 
         // GET api/<controller>/5
@@ -22,9 +27,11 @@ namespace Fetch_N_Store.Controllers
         }
 
         // POST api/<controller>
-        public string Post([FromBody]dynamic data)
+        public void Post([FromBody]dynamic data)
         {
-            return data.name.Value;
+            Response response = new Response() { StatusCode = data.status, Method = data.method, ResponseTime = data.time, URL = data.url };
+            Repo.AddResponse(response);
+                
         }
 
         // PUT api/<controller>/5
@@ -35,6 +42,8 @@ namespace Fetch_N_Store.Controllers
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+            ResponseRepository repo = new ResponseRepository();
+            repo.DeleteResponse(id);
         }
     }
 }
